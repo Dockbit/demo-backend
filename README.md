@@ -57,4 +57,7 @@ Finally, you need to provide Rails secret key base as an environment variable. R
 
 You now have a target server and can proceed adding it to your deployment pipeline in Dockbit.
 
+## License
+
+See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
 
