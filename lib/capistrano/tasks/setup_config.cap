@@ -1,0 +1,24 @@
+namespace :deploy do
+  desc 'Setup application configuration files'
+  task :setup_config do
+    on roles(:app) do
+      execute :mkdir, '-p', "#{shared_path}/config"
+      full_app_name = fetch(:full_app_name)
+
+      # config files to be uploaded to shared/config
+      fetch(:config_files).each do |file|
+        smart_template file
+      end
+
+      # files to be marked as executable
+      fetch(:executable_config_files).each do |file|
+        execute :chmod, '+x', "#{shared_path}/config/#{file}"
+      end
+
+      # files to be symlinked
+      fetch(:symlinks).each do |symlink|
+        execute :sudo, :ln, '-nfs', "#{shared_path}/config/#{symlink[:source]}", sub_strings(symlink[:link])
+      end
+    end
+  end
+end

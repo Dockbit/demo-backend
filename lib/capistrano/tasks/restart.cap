@@ -1,0 +1,32 @@
+namespace :deploy do
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute :sudo, "/etc/init.d/unicorn_#{fetch(:full_app_name)}", 'reload'
+      execute :sudo, "/etc/init.d/nginx", 'reload'
+    end
+  end
+end
+
+namespace :unicorn do
+  %w[start stop restart reload].each do |command|
+    desc "#{command} Unicorn server"
+    task command do
+      on roles(:app) do
+        execute :sudo, "/etc/init.d/unicorn_#{fetch(:full_app_name)}", command
+      end
+    end
+  end
+end
+
+namespace :nginx do
+  %w[start stop restart reload].each do |command|
+    desc "#{command} Nginx server"
+    task command do
+      on roles(:app) do
+        execute :sudo, '/etc/init.d/nginx', command
+      end
+    end
+  end
+end
+
