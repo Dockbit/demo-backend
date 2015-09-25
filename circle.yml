@@ -1,3 +1,3 @@
 notify:
   webhooks:
-    - url: http://requestb.in/1m81mf41
+    - url: https://dockbit.com/webhooks/2f4beddc7744f5a9dee5eb047512d3043234af9e
