@@ -29,5 +29,5 @@ def template_file(name)
   elsif File.exist?((file = "config/deploy/shared/#{name}.erb"))
     return file
   end
-  return nil
+  nil
 end
