@@ -9,6 +9,7 @@ AllCops:
     - 'config/**/*'
     - 'script/**/*'
     - 'bin/**/*'
+    - 'vendor/bundle/**/*'
 
 Lint/AssignmentInCondition:
   Enabled: false
