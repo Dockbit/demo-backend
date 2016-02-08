@@ -1,8 +1,7 @@
 notifications:
   webhooks:
     urls:
-      - https://dockbit.com/webhooks/e72546228aed932df83c0d09cdd076f4786e1ef4
-      - https://plateau.dockbit.com/webhooks/eaae74ddae9123c7c8333fc4858869a28e22f086
+      - https://dockbit.com/webhooks/6ad7474fb9e86902f01e921b77e00adb1d2a6ff1
     on_success: always
     on_failure: always
     on_start: never
