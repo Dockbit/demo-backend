@@ -2,6 +2,7 @@ notifications:
   webhooks:
     urls:
       - https://dockbit.com/webhooks/6ad7474fb9e86902f01e921b77e00adb1d2a6ff1
+      - https://dockbit.com/webhooks/QLdq6pUCuKaroViwo7mMiSnP
     on_success: always
     on_failure: always
     on_start: never
