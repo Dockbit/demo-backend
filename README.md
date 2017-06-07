@@ -1,4 +1,4 @@
-# Rails with Capistrano
+# Demo of Rails with Capistrano
 
 A sample application to demonstrate deployment of Capistrano driven Rails apps in [Dockbit](https://dockbit.com). The guide below describes how to prepare a target server and also may be used as a starter kit for running Rails applications in a single server environment. It is built upon [Ubuntu 14.04](http://releases.ubuntu.com/14.04/) with the following components:
 
